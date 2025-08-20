@@ -20,8 +20,8 @@ const server = http.createServer(app);
 
 // ✅ Allowed origins (local + deployed frontend)
 const allowedOrigins = [
-  'http://localhost:5173',              // local frontend
-  'https://blood-donation-management-divya-padisettis-projects.vercel.app'    // deployed frontend
+  'http://localhost:5173', // local frontend
+  'https://blood-donation-management-one.vercel.app' // deployed frontend
 ];
 
 app.use(cors({
@@ -29,11 +29,12 @@ app.use(cors({
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'));
+      callback(new Error('Not allowed by CORS: ' + origin));
     }
   },
-  methods: ['GET', 'POST'],
+  methods: ['GET', 'POST']
 }));
+
 
 app.use(express.json());
 
@@ -101,5 +102,6 @@ io.on('connection', (socket) => {
 // ✅ Port handling for both local and Render
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
 
 
