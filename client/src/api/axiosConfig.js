@@ -2,9 +2,10 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 // Create a new Axios instance with a base URL
-const apiClient = axios.create({
-    baseURL: '/api' // All requests will be prefixed with /api
+const API = axios.create({
+  baseURL: "https://blood-donation-management-2805.onrender.com/api",
 });
+
 
 // --- THE CRITICAL INTERCEPTOR ---
 // This interceptor will run for every response we receive from the API.
@@ -50,6 +51,7 @@ apiClient.interceptors.request.use(config => {
 }, error => {
     return Promise.reject(error);
 });
+
 
 
 export default apiClient;
