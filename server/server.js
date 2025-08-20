@@ -21,7 +21,7 @@ const server = http.createServer(app);
 // ✅ Allowed origins (local + deployed frontend)
 const allowedOrigins = [
   'http://localhost:5173',              // local frontend
-  'https://your-frontend.vercel.app'    // deployed frontend
+  'https://blood-donation-management-divya-padisettis-projects.vercel.app/'    // deployed frontend
 ];
 
 app.use(cors({
@@ -101,3 +101,4 @@ io.on('connection', (socket) => {
 // ✅ Port handling for both local and Render
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
