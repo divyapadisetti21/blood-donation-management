@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 
 // Create a new Axios instance with a base URL
 const API = axios.create({
-  baseURL: "https://blood-donation-management-2805.onrender.com/api",
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5173/api", // for Vite
 });
 
 
@@ -55,3 +55,4 @@ apiClient.interceptors.request.use(config => {
 
 
 export default apiClient;
+
