@@ -9,7 +9,7 @@ Users can sign up or log in securely using OTP verification via email. After log
 - Personalized user dashboard for managing requests and activity
 
 🛠 Tech Stack
-- Frontend: React, Chakra UI, Vercel (Deployment)
+- Frontend: Vite, React, Vercel (Deployment)
 - Backend: Node.js, Express, Render (Deployment)
 - Database: MongoDB
 - Email OTP Verification: Nodemailer
